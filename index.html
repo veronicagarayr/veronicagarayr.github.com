@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Construcción</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            text-align: center;
+            background: white;
+            padding: 80px 60px;
+            border: 3px solid #000;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .geometric-element {
+            width: 80px;
+            height: 80px;
+            background: #000;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .geometric-element::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            top: 10px;
+            left: 10px;
+        }
+
+        .geometric-element::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: #d32f2f;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .line {
+            width: 60px;
+            height: 2px;
+            background: #d32f2f;
+            margin: 30px auto;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 50px;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+        }
+
+        .contact-info p {
+            font-size: 12px;
+            color: #999;
+            margin: 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .corner-accent {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+        }
+
+        .corner-accent.top-left {
+            top: 15px;
+            left: 15px;
+        }
+
+        .corner-accent.bottom-right {
+            bottom: 15px;
+            right: 15px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 60px 40px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .geometric-element {
+                width: 60px;
+                height: 60px;
+                margin: 0 auto 30px;
+            }
+
+            .geometric-element::before {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="corner-accent top-left"></div>
+        <div class="corner-accent bottom-right"></div>
+
+        <div class="geometric-element"></div>
+
+        <h1>EN CONSTRUCCIÓN</h1>
+
+        <div class="line"></div>
+
+        <p class="subtitle">
+            Estamos trabajando en algo especial para ti
+        </p>
+
+        <p class="description">
+            Nuestro sitio se encuentra en fase de desarrollo. 
+            Pronto podrás acceder a todo el contenido. 
+            Gracias por tu paciencia.
+        </p>
+
+        <div class="contact-info">
+            <p>© 2026</p>
+            <p>Vuelve pronto</p>
+        </div>
+    </div>
+</body>
+</html>
