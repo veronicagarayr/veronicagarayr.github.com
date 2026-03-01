@@ -11,11 +11,14 @@ Sitio personal en GitHub Pages (`veronicagarayr.github.com`). Actualmente tiene 
 - `index.html` — estructura y contenido de la página
 - `style.css` — todos los estilos (separado del HTML para mantener los archivos ordenados)
 
-Sin dependencias externas, sin JavaScript de build, sin toolchain. El CSS se vincula desde el HTML con `<link rel="stylesheet" href="style.css">`.
+El CSS se vincula desde el HTML con `<link rel="stylesheet" href="style.css">`. El JS del toggle de idioma está inline al final de `index.html` (intencional, es un script pequeño).
+Dependencia externa: Google Fonts (Cormorant + Inter), cargada vía `<link>` en el `<head>`. Sin JavaScript de build, sin toolchain.
 
 ## Despliegue
 
 Los cambios en `main` quedan en vivo en `https://veronicagarayr.github.com` en segundos via GitHub Pages. Para previsualizar localmente, abrir `index.html` directamente en el navegador.
+Servidor local: `npx serve -p 3000` (configurado en `.claude/launch.json`).
+Nota: `python3 -m http.server` falla con PermissionError en el Python 3.9 del sistema en este Mac — no usar.
 
 ## Objetivo del sitio
 
