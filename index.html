@@ -3,453 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>En Construcción</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a76 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 200, 100, 0.3);
-            border-radius: 47% 53% 61% 39% / 38% 45% 55% 62%;
-            animation: float 6s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            bottom: -80px;
-            left: -80px;
-            width: 250px;
-            height: 250px;
-            background: rgba(255, 150, 120, 0.2);
-            border-radius: 71% 29% 66% 34% / 40% 63% 37% 60%;
-            animation: float 8s ease-in-out infinite reverse;
-            z-index: -1;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-            50% {
-                transform: translate(30px, -30px) rotate(10deg);
-            }
-        }
-
-        .container {
-            max-width: 600px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 80px 60px;
-            border-radius: 60px;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            right: -30px;
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 100%);
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            opacity: 0.6;
-            z-index: -1;
-            animation: spin 15s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .geometric-element {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 40px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .geometric-element::before {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 100%);
-            border-radius: 45% 55% 52% 48% / 48% 45% 55% 52%;
-            animation: blobAnimation 4s ease-in-out infinite;
-        }
-
-        .geometric-element::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: white;
-            border-radius: 50% 40% 45% 55% / 55% 50% 40% 45%;
-            z-index: 1;
-            animation: blobAnimation 4s ease-in-out infinite reverse;
-        }
-
-        @keyframes blobAnimation {
-            0%, 100% {
-                border-radius: 45% 55% 52% 48% / 48% 45% 55% 52%;
-            }
-            50% {
-                border-radius: 52% 48% 45% 55% / 45% 52% 48% 55%;
-            }
-        }
-
-        h1 {
-            font-size: 48px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            animation: slideDown 0.8s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .subtitle {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 40px;
-            font-weight: 400;
-            line-height: 1.6;
-            animation: slideDown 0.8s ease-out 0.1s both;
-        }
-
-        .line {
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #ff6b6b 0%, #ffd93d 100%);
-            margin: 30px auto;
-            border-radius: 2px;
-            animation: slideDown 0.8s ease-out 0.2s both;
-        }
-
-        .description {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 50px;
-            line-height: 1.8;
-            letter-spacing: 0.3px;
-            animation: slideDown 0.8s ease-out 0.3s both;
-        }
-
-        .contact-info {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid rgba(255, 107, 107, 0.2);
-        }
-
-        .contact-info p {
-            font-size: 12px;
-            color: #999;
-            margin: 8px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Tablet: 768px y superiores */
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-
-            body::before {
-                width: 250px;
-                height: 250px;
-                top: -80px;
-                right: -80px;
-            }
-
-            body::after {
-                width: 200px;
-                height: 200px;
-                bottom: -60px;
-                left: -60px;
-            }
-
-            .container {
-                max-width: 500px;
-                padding: 70px 50px;
-                border-radius: 50px;
-            }
-
-            .container::before {
-                width: 100px;
-                height: 100px;
-                top: -20px;
-                right: -20px;
-            }
-
-            h1 {
-                font-size: 42px;
-                letter-spacing: 0.5px;
-            }
-
-            .subtitle {
-                font-size: 16px;
-                margin-bottom: 35px;
-            }
-
-            .line {
-                width: 70px;
-                height: 3px;
-                margin: 25px auto;
-            }
-
-            .description {
-                font-size: 13px;
-                margin-bottom: 45px;
-            }
-
-            .geometric-element {
-                width: 90px;
-                height: 90px;
-                margin: 0 auto 35px;
-            }
-
-            .geometric-element::before {
-                width: 90px;
-                height: 90px;
-            }
-
-            .geometric-element::after {
-                width: 55px;
-                height: 55px;
-            }
-        }
-
-        /* Móvil grande: 576px a 767px */
-        @media (max-width: 576px) {
-            body {
-                padding: 12px;
-            }
-
-            body::before {
-                width: 200px;
-                height: 200px;
-                top: -60px;
-                right: -60px;
-            }
-
-            body::after {
-                width: 160px;
-                height: 160px;
-                bottom: -50px;
-                left: -50px;
-            }
-
-            .container {
-                max-width: 100%;
-                padding: 50px 35px;
-                border-radius: 40px;
-            }
-
-            .container::before {
-                width: 80px;
-                height: 80px;
-                top: -15px;
-                right: -15px;
-            }
-
-            h1 {
-                font-size: 32px;
-                letter-spacing: 0px;
-                margin-bottom: 15px;
-            }
-
-            .subtitle {
-                font-size: 15px;
-                margin-bottom: 30px;
-                line-height: 1.5;
-            }
-
-            .line {
-                width: 60px;
-                height: 3px;
-                margin: 20px auto;
-            }
-
-            .description {
-                font-size: 12px;
-                margin-bottom: 40px;
-                line-height: 1.7;
-            }
-
-            .geometric-element {
-                width: 75px;
-                height: 75px;
-                margin: 0 auto 25px;
-            }
-
-            .geometric-element::before {
-                width: 75px;
-                height: 75px;
-            }
-
-            .geometric-element::after {
-                width: 45px;
-                height: 45px;
-            }
-
-            .contact-info {
-                margin-top: 35px;
-                padding-top: 20px;
-            }
-
-            .contact-info p {
-                font-size: 11px;
-            }
-        }
-
-        /* Móvil pequeño: hasta 375px */
-        @media (max-width: 375px) {
-            body {
-                padding: 10px;
-            }
-
-            body::before {
-                width: 160px;
-                height: 160px;
-                top: -50px;
-                right: -50px;
-            }
-
-            body::after {
-                width: 130px;
-                height: 130px;
-                bottom: -40px;
-                left: -40px;
-            }
-
-            .container {
-                padding: 40px 25px;
-                border-radius: 35px;
-            }
-
-            .container::before {
-                width: 70px;
-                height: 70px;
-                top: -10px;
-                right: -10px;
-            }
-
-            h1 {
-                font-size: 28px;
-                margin-bottom: 12px;
-            }
-
-            .subtitle {
-                font-size: 14px;
-                margin-bottom: 25px;
-            }
-
-            .line {
-                width: 50px;
-                height: 2px;
-                margin: 15px auto;
-            }
-
-            .description {
-                font-size: 11px;
-                margin-bottom: 30px;
-                line-height: 1.6;
-            }
-
-            .geometric-element {
-                width: 60px;
-                height: 60px;
-                margin: 0 auto 20px;
-            }
-
-            .geometric-element::before {
-                width: 60px;
-                height: 60px;
-            }
-
-            .geometric-element::after {
-                width: 36px;
-                height: 36px;
-            }
-
-            .contact-info {
-                margin-top: 30px;
-                padding-top: 15px;
-            }
-
-            .contact-info p {
-                font-size: 10px;
-            }
-        }
-    </style>
+    <title>Verónica Garay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="geometric-element"></div>
 
-        <h1>EN CONSTRUCCIÓN</h1>
+    <header>
+        <span class="site-name">Verónica Garay</span>
+        <nav class="lang-toggle" aria-label="Selección de idioma">
+            <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+            <span class="lang-sep">|</span>
+            <button id="btn-en" onclick="setLang('en')">EN</button>
+        </nav>
+    </header>
 
-        <div class="line"></div>
+    <main>
+        <div class="content">
 
-        <p class="subtitle">
-            Estamos trabajando en algo especial para ti
-        </p>
+            <div data-lang="es">
+                <h1 class="heading">En construcción</h1>
+                <div class="line"></div>
+                <p class="subtitle">Estamos trabajando en algo especial para ti.</p>
+                <p class="description">
+                    Este sitio se encuentra en fase de desarrollo.<br>
+                    Pronto podrás acceder a todo el contenido.<br>
+                    Gracias por tu paciencia.
+                </p>
+            </div>
 
-        <p class="description">
-            Nuestro sitio se encuentra en fase de desarrollo. 
-            Pronto podrás acceder a todo el contenido. 
-            Gracias por tu paciencia.
-        </p>
+            <div data-lang="en" style="display:none">
+                <h1 class="heading">Under construction</h1>
+                <div class="line"></div>
+                <p class="subtitle">Something special is on its way.</p>
+                <p class="description">
+                    This site is currently in development.<br>
+                    Soon you'll have access to all the content.<br>
+                    Thank you for your patience.
+                </p>
+            </div>
 
-        <div class="contact-info">
-            <p>© 2026</p>
-            <p>Vuelve pronto</p>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <span class="footer-note">© 2026 Verónica Garay</span>
+        <span class="footer-note">
+            <span data-lang="es">Vuelve pronto</span>
+            <span data-lang="en" style="display:none">Come back soon</span>
+        </span>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-lang]').forEach(function(el) {
+                var isInline = el.tagName === 'SPAN';
+                el.style.display = el.dataset.lang === lang
+                    ? (isInline ? 'inline' : 'block')
+                    : 'none';
+            });
+            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        }
+    </script>
+
 </body>
 </html>
