@@ -1,0 +1,17 @@
+Referencias
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# HTML/General
+*.html.bak
+*.html.tmp

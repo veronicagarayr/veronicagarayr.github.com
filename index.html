@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="lang-es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,62 +11,376 @@
 </head>
 <body>
 
-    <header>
-        <span class="site-name">Verónica Garay</span>
-        <nav class="lang-toggle" aria-label="Selección de idioma">
-            <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
-            <span class="lang-sep">|</span>
-            <button id="btn-en" onclick="setLang('en')">EN</button>
-        </nav>
-    </header>
+<div class="spread">
 
-    <main>
-        <div class="content">
+    <!-- ── Left column: hero ────────────────── -->
+    <div class="col-left">
+        <p class="hero-text">
+            <span data-lang="es">Verónica<br>Garay<br>—<br>Diseño<br>Gráfico<br>y&nbsp;Fotografía</span>
+            <span data-lang="en">Verónica<br>Garay<br>—<br>Graphic<br>Design<br>&amp;&nbsp;Photography</span>
+        </p>
+    </div>
 
-            <div data-lang="es">
-                <h1 class="heading">En construcción</h1>
-                <div class="line"></div>
-                <p class="subtitle">Estamos trabajando en algo especial para ti.</p>
-                <p class="description">
-                    Este sitio se encuentra en fase de desarrollo.<br>
-                    Pronto podrás acceder a todo el contenido.
-                </p>
+    <!-- ── Right column: panels ─────────────── -->
+    <div class="col-right">
+
+        <!-- Work panel -->
+        <div class="panel is-active" id="panel-work">
+            <div class="panel-header">
+                <span class="panel-label">
+                    <span data-lang="es">Trabajo</span>
+                    <span data-lang="en">Work</span>
+                </span>
+                <span class="panel-number">[ 1 ]</span>
             </div>
 
-            <div data-lang="en" style="display:none">
-                <h1 class="heading">Under construction</h1>
-                <div class="line"></div>
-                <p class="subtitle">Something special is on its way.</p>
-                <p class="description">
-                    This site is currently in development.<br>
-                    Soon you'll have access to all the content.
+            <div class="work-section">
+                <p class="work-section-title">
+                    <span data-lang="es">Diseño Editorial</span>
+                    <span data-lang="en">Editorial Design</span>
                 </p>
+                <ul class="work-list">
+                    <li class="work-item" onclick="openProject('ed-01')">
+                        <span class="work-item-title">
+                            <span data-lang="es">Catálogo de Arte Contemporáneo</span>
+                            <span data-lang="en">Contemporary Art Catalogue</span>
+                        </span>
+                        <span class="work-item-meta">2024</span>
+                    </li>
+                    <li class="work-item" onclick="openProject('ed-02')">
+                        <span class="work-item-title">
+                            <span data-lang="es">Revista de Cultura Urbana</span>
+                            <span data-lang="en">Urban Culture Magazine</span>
+                        </span>
+                        <span class="work-item-meta">2023</span>
+                    </li>
+                    <li class="work-item" onclick="openProject('ed-03')">
+                        <span class="work-item-title">
+                            <span data-lang="es">Publicación de Arquitectura</span>
+                            <span data-lang="en">Architecture Publication</span>
+                        </span>
+                        <span class="work-item-meta">2023</span>
+                    </li>
+                    <li class="work-item" onclick="openProject('ed-04')">
+                        <span class="work-item-title">
+                            <span data-lang="es">Memoria Anual Institución Cultural</span>
+                            <span data-lang="en">Cultural Institution Annual Report</span>
+                        </span>
+                        <span class="work-item-meta">2022</span>
+                    </li>
+                </ul>
             </div>
 
+            <div class="work-section">
+                <p class="work-section-title">
+                    <span data-lang="es">Cartelismo</span>
+                    <span data-lang="en">Poster Design</span>
+                </p>
+                <ul class="work-list">
+                    <li class="work-item" onclick="openProject('ca-01')">
+                        <span class="work-item-title">
+                            <span data-lang="es">Festival de Cine Documental</span>
+                            <span data-lang="en">Documentary Film Festival</span>
+                        </span>
+                        <span class="work-item-meta">2024</span>
+                    </li>
+                    <li class="work-item" onclick="openProject('ca-02')">
+                        <span class="work-item-title">
+                            <span data-lang="es">Temporada de Teatro Lírico</span>
+                            <span data-lang="en">Lyric Theatre Season</span>
+                        </span>
+                        <span class="work-item-meta">2024</span>
+                    </li>
+                    <li class="work-item" onclick="openProject('ca-03')">
+                        <span class="work-item-title">
+                            <span data-lang="es">Exposición de Artes Escénicas</span>
+                            <span data-lang="en">Performing Arts Exhibition</span>
+                        </span>
+                        <span class="work-item-meta">2023</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="work-section">
+                <p class="work-section-title">
+                    <span data-lang="es">Fotografía</span>
+                    <span data-lang="en">Photography</span>
+                </p>
+                <ul class="work-list">
+                    <li class="work-item" onclick="openProject('fo-01')">
+                        <span class="work-item-title">
+                            <span data-lang="es">Serie Paisaje Industrial</span>
+                            <span data-lang="en">Industrial Landscape Series</span>
+                        </span>
+                        <span class="work-item-meta">2024</span>
+                    </li>
+                    <li class="work-item" onclick="openProject('fo-02')">
+                        <span class="work-item-title">
+                            <span data-lang="es">Retratos de Artistas</span>
+                            <span data-lang="en">Artist Portraits</span>
+                        </span>
+                        <span class="work-item-meta">2023</span>
+                    </li>
+                    <li class="work-item" onclick="openProject('fo-03')">
+                        <span class="work-item-title">
+                            <span data-lang="es">Arquitectura Abandonada</span>
+                            <span data-lang="en">Abandoned Architecture</span>
+                        </span>
+                        <span class="work-item-meta">2022</span>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </main>
 
-    <footer>
-        <span class="footer-note">© 2026 Verónica Garay</span>
-        <span class="footer-note">
-            <span data-lang="es">Vuelve pronto</span>
-            <span data-lang="en" style="display:none">Come back soon</span>
+        <!-- About panel -->
+        <div class="panel" id="panel-about">
+            <div class="panel-header">
+                <span class="panel-label">About</span>
+                <span class="panel-number">[ 2 ]</span>
+            </div>
+
+            <p class="about-intro" data-lang="es">
+                Diseñadora gráfica y fotógrafa con base en Madrid.
+                Trabaja en la intersección del diseño editorial,
+                el cartelismo y la imagen autoral.
+                Su práctica parte de la tipografía y el libro
+                como espacios de pensamiento visual.
+            </p>
+            <p class="about-intro" data-lang="en">
+                Graphic designer and photographer based in Madrid.
+                Working at the intersection of editorial design,
+                poster art and authorial image-making.
+                Her practice is rooted in typography and the book
+                as spaces of visual thought.
+            </p>
+
+            <div class="cv-section">
+                <p class="cv-section-title">
+                    <span data-lang="es">Formación</span>
+                    <span data-lang="en">Education</span>
+                </p>
+                <div class="cv-entry">
+                    <span class="cv-year">2018</span>
+                    <span>
+                        <span data-lang="es">Máster en Diseño Editorial — Universidad Lorem Ipsum, Madrid</span>
+                        <span data-lang="en">Master in Editorial Design — Lorem Ipsum University, Madrid</span>
+                    </span>
+                </div>
+                <div class="cv-entry">
+                    <span class="cv-year">2015</span>
+                    <span>
+                        <span data-lang="es">Grado en Diseño Gráfico — Escuela Superior de Arte y Diseño, Valencia</span>
+                        <span data-lang="en">BA in Graphic Design — School of Art and Design, Valencia</span>
+                    </span>
+                </div>
+                <div class="cv-entry">
+                    <span class="cv-year">2012</span>
+                    <span>
+                        <span data-lang="es">Fotografía Analógica — Taller Lorem Ipsum, Barcelona</span>
+                        <span data-lang="en">Analogue Photography — Lorem Ipsum Workshop, Barcelona</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <p class="cv-section-title">
+                    <span data-lang="es">Exposiciones y publicaciones</span>
+                    <span data-lang="en">Exhibitions &amp; publications</span>
+                </p>
+                <div class="cv-entry">
+                    <span class="cv-year">2024</span>
+                    <span>
+                        <span data-lang="es">Muestra colectiva de fotografía — Galería Lorem Ipsum, Madrid</span>
+                        <span data-lang="en">Group photography show — Lorem Ipsum Gallery, Madrid</span>
+                    </span>
+                </div>
+                <div class="cv-entry">
+                    <span class="cv-year">2023</span>
+                    <span>
+                        <span data-lang="es">Anuario de Diseño Iberoamericano</span>
+                        <span data-lang="en">Ibero-American Design Annual</span>
+                    </span>
+                </div>
+                <div class="cv-entry">
+                    <span class="cv-year">2022</span>
+                    <span>
+                        <span data-lang="es">Premio de Cartelismo — Festival Internacional de Artes Escénicas</span>
+                        <span data-lang="en">Poster Design Award — International Performing Arts Festival</span>
+                    </span>
+                </div>
+                <div class="cv-entry">
+                    <span class="cv-year">2021</span>
+                    <span>
+                        <span data-lang="es">Exposición individual — Centro Cultural Lorem Ipsum, Barcelona</span>
+                        <span data-lang="en">Solo exhibition — Lorem Ipsum Cultural Centre, Barcelona</span>
+                    </span>
+                </div>
+                <div class="cv-entry">
+                    <span class="cv-year">2020</span>
+                    <span>
+                        <span data-lang="es">Colaboración editorial — Revista Lorem Ipsum, Ciudad de México</span>
+                        <span data-lang="en">Editorial collaboration — Lorem Ipsum Magazine, Mexico City</span>
+                    </span>
+                </div>
+                <div class="cv-entry">
+                    <span class="cv-year">2019</span>
+                    <span>
+                        <span data-lang="es">Muestra colectiva — Feria Lorem Ipsum, Buenos Aires</span>
+                        <span data-lang="en">Group show — Lorem Ipsum Fair, Buenos Aires</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact panel -->
+        <div class="panel" id="panel-contact">
+            <div class="panel-header">
+                <span class="panel-label">
+                    <span data-lang="es">Contacto</span>
+                    <span data-lang="en">Contact</span>
+                </span>
+                <span class="panel-number">[ 3 ]</span>
+            </div>
+
+            <div class="contact-block">
+                <p class="contact-label">
+                    <span data-lang="es">Correo electrónico</span>
+                    <span data-lang="en">Email</span>
+                </p>
+                <p class="contact-value">
+                    <a href="mailto:hola@veronicagaray.com">hola@veronicagaray.com</a>
+                </p>
+            </div>
+
+            <div class="contact-block">
+                <p class="contact-label">Instagram</p>
+                <p class="contact-value">
+                    <a href="https://instagram.com/veronicagarayr" target="_blank" rel="noopener">@veronicagarayr</a>
+                </p>
+            </div>
+
+            <div class="contact-block">
+                <p class="contact-label">
+                    <span data-lang="es">Disponibilidad</span>
+                    <span data-lang="en">Availability</span>
+                </p>
+                <p class="contact-value">
+                    <span data-lang="es">Abierta a proyectos<br>freelance y colaboraciones<br>editoriales</span>
+                    <span data-lang="en">Open to freelance projects<br>and editorial<br>collaborations</span>
+                </p>
+            </div>
+        </div>
+
+    </div><!-- /col-right -->
+</div><!-- /spread -->
+
+<!-- ── Project overlay ──────────────────────── -->
+<div class="project-overlay" id="project-overlay">
+    <div class="overlay-header">
+        <span class="panel-number" id="overlay-number">—</span>
+        <button class="overlay-close" onclick="closeProject()">
+            <span data-lang="es">Cerrar</span>
+            <span data-lang="en">Close</span>
+        </button>
+    </div>
+    <h2 class="project-title" id="overlay-title"></h2>
+    <p class="project-meta" id="overlay-meta"></p>
+    <div class="project-image">
+        <span>
+            <span data-lang="es">imagen</span>
+            <span data-lang="en">image</span>
         </span>
-    </footer>
+    </div>
+    <div class="project-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut porta nisl, in aliquam enim. Etiam id enim et mauris fringilla vehicula id eget diam. Vestibulum laoreet felis id felis blandit congue. Phasellus posuere nulla vel est tristique, at facilisis arcu tempus.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    </div>
+</div>
 
-    <script>
-        function setLang(lang) {
-            document.documentElement.lang = lang;
-            document.querySelectorAll('[data-lang]').forEach(function(el) {
-                var isInline = el.tagName === 'SPAN';
-                el.style.display = el.dataset.lang === lang
-                    ? (isInline ? 'inline' : 'block')
-                    : 'none';
-            });
-            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-        }
-    </script>
+<!-- ── Navigation ────────────────────────────── -->
+<nav class="bottom-nav" aria-label="Navegación principal">
+    <button class="is-active" id="nav-work" onclick="showPanel('work')">
+        <span data-lang="es">Trabajo</span>
+        <span data-lang="en">Work</span>
+    </button>
+    <span class="nav-sep"></span>
+    <button id="nav-about" onclick="showPanel('about')">About</button>
+    <span class="nav-sep"></span>
+    <button id="nav-contact" onclick="showPanel('contact')">
+        <span data-lang="es">Contacto</span>
+        <span data-lang="en">Contact</span>
+    </button>
+</nav>
+
+<!-- ── Lang toggle ────────────────────────────── -->
+<div class="lang-toggle" aria-label="Selección de idioma">
+    <button id="btn-es" class="is-active" onclick="setLang('es')">ES</button>
+    <span class="lang-sep">|</span>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+
+<script>
+    var currentLang = 'es';
+    var currentProjectId = null;
+
+    // ── Projects data ──
+    var projects = {
+        'ed-01': { es: ['Catálogo de Arte Contemporáneo', 'Diseño Editorial · 2024'], en: ['Contemporary Art Catalogue', 'Editorial Design · 2024'] },
+        'ed-02': { es: ['Revista de Cultura Urbana',       'Diseño Editorial · 2023'], en: ['Urban Culture Magazine',       'Editorial Design · 2023'] },
+        'ed-03': { es: ['Publicación de Arquitectura',     'Diseño Editorial · 2023'], en: ['Architecture Publication',     'Editorial Design · 2023'] },
+        'ed-04': { es: ['Memoria Anual Institución Cultural', 'Diseño Editorial · 2022'], en: ['Cultural Institution Annual Report', 'Editorial Design · 2022'] },
+        'ca-01': { es: ['Festival de Cine Documental',    'Cartelismo · 2024'], en: ['Documentary Film Festival',  'Poster Design · 2024'] },
+        'ca-02': { es: ['Temporada de Teatro Lírico',      'Cartelismo · 2024'], en: ['Lyric Theatre Season',       'Poster Design · 2024'] },
+        'ca-03': { es: ['Exposición de Artes Escénicas',   'Cartelismo · 2023'], en: ['Performing Arts Exhibition', 'Poster Design · 2023'] },
+        'fo-01': { es: ['Serie Paisaje Industrial',        'Fotografía · 2024'], en: ['Industrial Landscape Series', 'Photography · 2024'] },
+        'fo-02': { es: ['Retratos de Artistas',            'Fotografía · 2023'], en: ['Artist Portraits',           'Photography · 2023'] },
+        'fo-03': { es: ['Arquitectura Abandonada',         'Fotografía · 2022'], en: ['Abandoned Architecture',    'Photography · 2022'] },
+    };
+
+    // ── Panel navigation ──
+    function showPanel(name) {
+        document.querySelectorAll('.panel').forEach(function(p) {
+            p.classList.remove('is-active');
+        });
+        document.getElementById('panel-' + name).classList.add('is-active');
+        document.querySelectorAll('.bottom-nav button').forEach(function(b) {
+            b.classList.remove('is-active');
+        });
+        document.getElementById('nav-' + name).classList.add('is-active');
+        closeProject();
+    }
+
+    // ── Project overlay ──
+    function openProject(id) {
+        currentProjectId = id;
+        renderOverlay();
+        document.getElementById('project-overlay').classList.add('is-open');
+    }
+
+    function closeProject() {
+        document.getElementById('project-overlay').classList.remove('is-open');
+        currentProjectId = null;
+    }
+
+    function renderOverlay() {
+        if (!currentProjectId) return;
+        var p = projects[currentProjectId];
+        var data = p[currentLang];
+        document.getElementById('overlay-title').textContent = data[0];
+        document.getElementById('overlay-meta').textContent  = data[1];
+    }
+
+    // ── Language toggle ──
+    function setLang(lang) {
+        currentLang = lang;
+        var html = document.documentElement;
+        html.lang = lang;
+        html.className = 'lang-' + lang;
+        document.getElementById('btn-es').classList.toggle('is-active', lang === 'es');
+        document.getElementById('btn-en').classList.toggle('is-active', lang === 'en');
+        if (currentProjectId) renderOverlay();
+    }
+</script>
 
 </body>
 </html>
